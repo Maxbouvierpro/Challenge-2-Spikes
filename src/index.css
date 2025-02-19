@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swiper custom styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #17183B !important;
+  top: 40px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: 80%;
+}
+
+
+.swiper-pagination-bullet{
+  display: none;
+}
+
+/* Custom styles */
+@layer base {
+  body {
+    @apply text-space-cadet;
+  }
+}
+
+* {
+  font-family:'Poppins', Arial;
+}
+
+header {
+  text-transform: uppercase;
+font-family: Poppins;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 16px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.cart-badge {
+  /* animation: bounce 0.3s ease; */
+}
