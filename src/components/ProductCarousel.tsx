@@ -4,11 +4,11 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import image from '../../public/Image-1.png'
-import image1 from '../../public/Image-2.png'
-import image2 from '../../public/Image-3.png'
-import image3 from '../../public/Image-4.png'
-import image4 from '../../public/Image-5.png'
+import image from '/Image-1.png'
+import image1 from '/Image-2.png'
+import image2 from '/Image-3.png'
+import image3 from '/Image-4.png'
+import image4 from '/Image-5.png'
 
 const ProductCarousel = () => {
   const images = [
