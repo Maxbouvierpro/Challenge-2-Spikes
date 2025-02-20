@@ -4,19 +4,13 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import image from '../../public/Image-1.png'
-import image1 from '../../public/Image-2.png'
-import image2 from '../../public/Image-3.png'
-import image3 from '../../public/Image-4.png'
-import image4 from '../../public/Image-5.png'
-
 const ProductCarousel = () => {
   const images = [
-    image,
-    image1,
-    image2,
-    image3,
-    image4,
+    '/Image-1.png',
+    '/Image-2.png',
+    '/Image-3.png',
+    '/Image-4.png',
+    '/Image-5.png',
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
