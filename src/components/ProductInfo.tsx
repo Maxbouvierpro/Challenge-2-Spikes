@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { FiHeart, FiFacebook, FiTwitter, FiInstagram, FiLinkedin, FiArrowLeft } from 'react-icons/fi';
 
-const ProductInfo = () => {
+interface ProductInfoProps {
+  setQuantity: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const ProductInfo: React.FC<ProductInfoProps> = ({ setQuantity }) => {
   const [selectedColor, setSelectedColor] = useState('#C2BCB3');
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantityState] = useState(1);
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedColor(event.target.value);
@@ -114,14 +118,14 @@ const ProductInfo = () => {
           <div className="flex space-x-4 pt-6 max-w-96">
             <div className="flex items-center w-1/2 rounded-[4px] border border-gray-400 p-[16px] gap-[40px]">
               <button
-                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                onClick={() => setQuantityState(Math.max(1, quantity - 1))}
                 className="text-black rounded-md px-2 w-full"
               >
                 -
               </button>
               <span className="text-lg w-full text-center">{quantity}</span>
               <button
-                onClick={() => setQuantity(Math.min(5, quantity + 1))}
+                onClick={() => setQuantityState(Math.min(5, quantity + 1))}
                 className="text-black rounded-md px-2 w-full"
               >
                 +

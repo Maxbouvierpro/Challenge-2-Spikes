@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,7 +15,7 @@ const ProductCarousel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const swiperRef = useRef(null);
+  const swiperRef = useRef<SwiperRef | null>(null);
 
   return (
     <div className="w-full">
@@ -51,7 +51,9 @@ const ProductCarousel = () => {
             className="w-16 h-16 cursor-pointer border border-gray-300 rounded"
             onClick={() => {
               setCurrentIndex(index);
-              swiperRef.current.swiper.slideTo(index);
+              if (swiperRef.current) {
+                swiperRef.current.swiper.slideTo(index);
+              }
             }}
           />
         ))}

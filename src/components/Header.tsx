@@ -1,10 +1,13 @@
 import { FiShoppingCart, FiHeart, FiUser, FiMenu } from 'react-icons/fi'
 import { useState } from 'react'
 
-const Header = () => {
+interface HeaderProps {
+  quantity: number;
+}
+
+const Header: React.FC<HeaderProps> = ({ quantity }) => {
   const navLinks = ['Shop', 'Collective', 'Designers', 'About us', 'Contact']
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const quantity = 5 // assuming a quantity value, replace with actual value
 
   return (
     <header className="border-b border-french-grey">
